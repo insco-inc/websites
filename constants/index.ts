@@ -5,6 +5,6 @@ export const basePath =
   process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "" : "";
 export const domain =
   process.env.NODE_ENV === "production"
-    ? `https://insco.io${basePath}`
+    ? `https://www.insco.io${basePath}`
     : `http://localhost:3000${basePath}`;
 export const sitemapUrls = ["support"];

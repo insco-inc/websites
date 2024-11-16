@@ -1,17 +1,20 @@
 import RSS from "rss";
 import { allPosts } from "contentlayer/generated";
-import { domain } from "@/constants";
+import { basePath, domain } from "@/constants";
 import { languages } from "@/i18n/settings";
 
 const rssPages = ["/blog"];
 
-export async function GET() {
+export async function GET(request: Request) {
+  const originHost = request.headers.get("custom-forwarded-host");
+  console.log("originHost:", originHost);
+  const host = originHost ? `https://${originHost}${basePath}` : domain;
   const feed = new RSS({
     title: "Blog posts | RSS Feed",
     description: "Welcome to blog posts!",
-    site_url: domain,
-    feed_url: `${domain}/rss.xml`,
-    image_url: `${domain}/logo.png`,
+    site_url: host,
+    feed_url: `${host}/rss.xml`,
+    image_url: `${host}/logo.png`,
     pubDate: new Date(),
     copyright: `All rights reserved ${new Date().getFullYear()}, @kjxbyz`,
   });
@@ -32,7 +35,7 @@ export async function GET() {
         title: post.title,
         description: post.summary || "",
         author: post.author,
-        url: `${domain}/${post.slug}`,
+        url: `${host}/${post.slug}`,
         date: post.publishedAt,
       });
     });
