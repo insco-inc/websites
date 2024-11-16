@@ -50,29 +50,20 @@ export default function Footer(props: LngProps) {
         </a>
         &nbsp;
         {process.env.VERCEL_GIT_COMMIT_SHA && (
-          <p className="flex items-center justify-center">
-            <a
-              href={`https://github.com/insco-inc/websites/commit/${process.env.VERCEL_GIT_COMMIT_SHA}`}
-              target="_blank"
-              className="hover:underline"
-              rel="noreferrer"
-            >
-              {process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
-            </a>
-          </p>
-        )}
-      </span>
-      <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-        {cookies[cacheRealSourceKey] ? (
           <>
-            <a href="https://beian.miit.gov.cn/" target="_blank">
-              {cookies[cacheRealSourceKey] === "cn"
-                ? "鲁ICP备18053123号-1"
-                : "鲁ICP备18053123号-4"}
-            </a>
+            <p className="flex items-center justify-center">
+              <a
+                href={`https://github.com/insco-inc/websites/commit/${process.env.VERCEL_GIT_COMMIT_SHA}`}
+                target="_blank"
+                className="hover:underline"
+                rel="noreferrer"
+              >
+                {process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
+              </a>
+            </p>
             &nbsp;
           </>
-        ) : null}
+        )}
         <Image
           src="https://visitor-badge.laobi.icu/badge?page_id=insco.io"
           width={60}
@@ -80,6 +71,15 @@ export default function Footer(props: LngProps) {
           alt="visitor badge"
         />
       </span>
+      {cookies[cacheRealSourceKey] ? (
+        <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+          <a href="https://beian.miit.gov.cn/" target="_blank">
+            {cookies[cacheRealSourceKey] === "cn"
+              ? "鲁ICP备18053123号-1"
+              : "鲁ICP备18053123号-4"}
+          </a>
+        </span>
+      ) : null}
     </div>
   );
 }
