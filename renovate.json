@@ -14,20 +14,8 @@
       "matchPackageNames": ["next", "eslint-config-next"]
     },
     {
-      "allowedVersions": "9",
-      "matchPackageNames": ["uuid", "@types/uuid"]
-    },
-    {
       "allowedVersions": "8",
       "matchPackageNames": ["eslint"]
-    },
-    {
-      "allowedVersions": "7",
-      "matchPackageNames": ["query-string"]
-    },
-    {
-      "allowedVersions": "1",
-      "matchPackageNames": ["http-status"]
     },
     {
       "matchPackagePatterns": ["contentlayer2", "next-contentlayer2"],
