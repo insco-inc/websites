@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     .filter((post) => post.slug.startsWith("en/"))
     .map((post) => ({
       url: `${host}/${post.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 1,
     }));
@@ -27,7 +27,7 @@ export async function GET(request: Request) {
         .filter((language) => language === "en")
         .map((lng: string) => ({
           url: `${host}/${lng}/${url}`,
-          lastModified: new Date(),
+          lastModified: new Date().toISOString(),
           changeFrequency: "weekly",
           priority: 1,
         }));
