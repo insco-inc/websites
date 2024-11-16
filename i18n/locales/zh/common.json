@@ -1,5 +1,11 @@
 {
   "slogan": "让科技更简单, 让体验更完美.",
   "appstores": "应用商店",
+  "app-store": "您喜欢的应用程序。来自您可以信赖的地方。",
+  "google-play": "Google Play为您提供了一个查找、享受和共享应用程序、音乐、电影和书籍的地方。",
+  "microsoft-store": "获取适用于您的Windows设备的应用、游戏等。",
+  "amazon-appstore": "在应用程序和游戏商店中在线购物，选择丰富。",
+  "snap-store": "查找并安装适用于所有主要Linux发行版的最佳Linux软件。",
+  "flathub": "查找并安装数百个适用于Linux的应用程序和游戏。",
   "return-to-home": "返回首页"
 }

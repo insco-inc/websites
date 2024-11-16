@@ -1,5 +1,11 @@
 {
   "slogan": "Make technology simpler and experience more perfect.",
   "appstores": "App Store",
+  "app-store": "The apps you love. From a place you can trust.",
+  "google-play": "Google Play gives you one place to find, enjoy, & share Apps, Music, Movies & Books.",
+  "microsoft-store": "Get apps, games, and more for your Windows device.",
+  "amazon-appstore": "Online shopping from a great selection at Apps &amp; Games Store.",
+  "snap-store": "Find and install the best Linux software for all major Linux distributions.",
+  "flathub": "Find and install hundreds of apps and games for Linux.",
   "return-to-home": "Return to home"
 }

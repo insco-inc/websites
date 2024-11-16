@@ -69,6 +69,57 @@ export default function Home({
     [],
   );
 
+  const appStores = [
+    {
+      title: "App Store",
+      description: t("app-store"),
+      demo: (
+        <AppStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://apps.apple.com/developer/id1474622324",
+    },
+    {
+      title: "Google Play",
+      description: t("google-play"),
+      demo: (
+        <GooglePlay className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://play.google.com/store/apps/dev?id=6147500812487654859",
+    },
+    {
+      title: "Microsoft Store",
+      description: t("microsoft-store"),
+      demo: (
+        <MicrosoftStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://apps.microsoft.com/search/publisher?name=Insco+LLC",
+    },
+    {
+      title: "Amazon Appstore",
+      description: t("amazon-appstore"),
+      demo: (
+        <AmazonAppStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://www.amazon.com/s?i=mobile-apps&rh=p_4%3A%E9%9D%92%E5%B2%9B%E5%9B%A0%E6%96%AF%E7%A7%91%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&search-type=ss",
+    },
+    {
+      title: "Snap Store",
+      description: t("snap-store"),
+      demo: (
+        <SnapStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://snapcraft.io/publisher/insco",
+    },
+    {
+      title: "Flathub",
+      description: t("flathub"),
+      demo: (
+        <Flathub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://flathub.org/apps/collection/developer/Insco%20LLC/1",
+    },
+  ];
+
   return (
     <div className="my-16 w-full max-w-screen-xl">
       <div className="mx-auto w-full max-w-xl px-5 xl:px-0">
@@ -146,60 +197,3 @@ export default function Home({
     </div>
   );
 }
-
-const appStores = [
-  {
-    title: "App Store",
-    description:
-      "The apps you love. From a place you can trust. [Visit](https://www.apple.com/app-store)",
-    demo: (
-      <AppStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://apps.apple.com/developer/id1474622324",
-  },
-  {
-    title: "Google Play",
-    description:
-      "Google Play gives you one place to find, enjoy, & share Apps, Music, Movies & Books. [Visit](https://play.google.com)",
-    demo: (
-      <GooglePlay className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://play.google.com/store/apps/dev?id=6147500812487654859",
-  },
-  {
-    title: "Microsoft Store",
-    description:
-      "Get apps, games, and more for your Windows device. [Visit](https://apps.microsoft.com)",
-    demo: (
-      <MicrosoftStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://apps.microsoft.com/search/publisher?name=Insco+LLC",
-  },
-  {
-    title: "Amazon Appstore",
-    description:
-      "Online shopping from a great selection at Apps &amp; Games Store. [Visit](https://www.amazon.com/gp/browse.html?node=2350149011)",
-    demo: (
-      <AmazonAppStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://www.amazon.com/s?i=mobile-apps&rh=p_4%3A%E9%9D%92%E5%B2%9B%E5%9B%A0%E6%96%AF%E7%A7%91%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&search-type=ss",
-  },
-  {
-    title: "Snap Store",
-    description:
-      "Find and install the best Linux software for all major Linux distributions. [Visit](https://snapcraft.io)",
-    demo: (
-      <SnapStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://snapcraft.io/publisher/insco",
-  },
-  {
-    title: "Flathub",
-    description:
-      "Find and install hundreds of apps and games for Linux. [Visit](https://flathub.org)",
-    demo: (
-      <Flathub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://flathub.org/apps/collection/developer/Insco%20LLC/1",
-  },
-];

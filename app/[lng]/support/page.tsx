@@ -44,6 +44,27 @@ export default function Support({
     [],
   );
 
+  const apps = [
+    {
+      title: t("email-title"),
+      description: t("email-description"),
+      demo: (
+        <MdEmail className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "mailto://contact@insco.cn",
+      large: false,
+    },
+    {
+      title: t("discussions-title"),
+      description: t("discussions-description"),
+      demo: (
+        <FaGithub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+      url: "https://github.com/insco-inc/community/discussions",
+      large: false,
+    },
+  ];
+
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
@@ -75,25 +96,3 @@ export default function Support({
     </>
   );
 }
-
-const apps = [
-  {
-    title: "Email",
-    description: "Create a support request by sending an email.",
-    demo: (
-      <MdEmail className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "mailto://contact@insco.cn",
-    large: false,
-  },
-  {
-    title: "GitHub Discussions",
-    description:
-      "We're using `GitHub Discussions` as a place to connect with other members of our community.",
-    demo: (
-      <FaGithub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://github.com/insco-inc/community/discussions",
-    large: false,
-  },
-];

@@ -1,5 +1,9 @@
 {
   "support": "Support",
   "description": "Contact us to solve your problem.",
-  "community": "Community"
+  "community": "Community",
+  "email-title": "Email",
+  "email-description": "Create a support request by sending an email.",
+  "discussions-title": "GitHub Discussions",
+  "discussions-description": "We're using `GitHub Discussions` as a place to connect with other members of our community."
 }

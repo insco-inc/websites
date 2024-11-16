@@ -1,5 +1,9 @@
 {
   "support": "支持",
   "description": "联系我们，以解决你的问题。",
-  "community": "社区"
+  "community": "社区",
+  "email-title": "电子邮件",
+  "email-description": "通过发送电子邮件创建支持请求。",
+  "discussions-title": "GitHub讨论",
+  "discussions-description": "我们使用`GitHub讨论`作为与社区其他成员联系的地方。"
 }
