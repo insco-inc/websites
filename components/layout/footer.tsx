@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaRss } from "react-icons/fa";
-import { domain } from "@/constants";
+import { useCookies } from "react-cookie";
+import { cacheRealSourceKey, domain } from "@/constants";
 import { useTranslation } from "@/i18n/client";
 import type { LngProps } from "@/types/i18next-lng";
 
@@ -11,21 +12,12 @@ const startDate: number = 2024;
 export default function Footer(props: LngProps) {
   const { t } = useTranslation(props.lng, "footer");
   const { t: th } = useTranslation(props.lng, "header");
+  const [cookies] = useCookies([cacheRealSourceKey]);
+
   const fullYear = new Date().getFullYear();
 
   return (
     <div className="absolute w-full border-b border-gray-200 py-5 text-center dark:border-gray-700">
-      {/*<p className="text-gray-500 dark:text-white/80">*/}
-      {/*  {t("footer")}{" "}*/}
-      {/*  <a*/}
-      {/*    className="font-medium text-gray-800 underline transition-colors dark:text-white/90"*/}
-      {/*    href="https://github.com/insco-inc/websites"*/}
-      {/*    target="_blank"*/}
-      {/*    rel="noopener noreferrer"*/}
-      {/*  >*/}
-      {/*    GitHub*/}
-      {/*  </a>*/}
-      {/*</p>*/}
       <p className="mt-2 flex items-center justify-center">
         <Link
           className="font-medium text-gray-800 underline transition-colors dark:text-white/90"
@@ -69,7 +61,18 @@ export default function Footer(props: LngProps) {
             </a>
           </p>
         )}
-        &nbsp;
+      </span>
+      <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+        {cookies[cacheRealSourceKey] ? (
+          <>
+            <a href="https://beian.miit.gov.cn/" target="_blank">
+              {cookies[cacheRealSourceKey] === "cn"
+                ? "鲁ICP备18053123号-1"
+                : "鲁ICP备18053123号-4"}
+            </a>
+            &nbsp;
+          </>
+        ) : null}
         <Image
           src="https://visitor-badge.laobi.icu/badge?page_id=insco.io"
           width={60}

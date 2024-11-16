@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import i18next, { FlatNamespace, KeyPrefix } from "i18next";
 import {
@@ -66,10 +65,10 @@ export function useTranslation<
     }, [lng, i18n]);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-      if (cookies.i18next === lng) return;
+      if (cookies[cacheLngKey] === lng) return;
       setCookie(cacheLngKey, lng, { path: "/" });
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [lng, cookies.i18next]);
+    }, [lng, cookies.__insco_blog_lng__]);
   }
   return ret;
 }
