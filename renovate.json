@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 0,
+  "ignoreDeps": ["node"],
+  "packageRules": [
+    {
+      "allowedVersions": "18",
+      "matchPackageNames": ["@types/node"]
+    },
+    {
+      "allowedVersions": "14",
+      "matchPackageNames": ["next", "eslint-config-next"]
+    },
+    {
+      "allowedVersions": "9",
+      "matchPackageNames": ["uuid", "@types/uuid"]
+    },
+    {
+      "allowedVersions": "8",
+      "matchPackageNames": ["eslint"]
+    },
+    {
+      "allowedVersions": "7",
+      "matchPackageNames": ["query-string"]
+    },
+    {
+      "allowedVersions": "1",
+      "matchPackageNames": ["http-status"]
+    },
+    {
+      "matchPackagePatterns": ["contentlayer2", "next-contentlayer2"],
+      "groupName": "contentlayer2"
+    }
+  ]
+}

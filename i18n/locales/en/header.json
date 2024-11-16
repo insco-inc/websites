@@ -1,0 +1,13 @@
+{
+  "title": "Insco",
+  "menus": {
+    "system": "Auto Mode",
+    "dark": "Dark Mode",
+    "light": "Light Mode",
+    "blog": "Blog"
+  },
+  "languages": {
+    "zh": "Chinese",
+    "en": "English"
+  }
+}
