@@ -29,11 +29,6 @@ const nextConfig = {
     NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY:
       process.env.NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY,
     NEXT_PUBLIC_DISQUS_SHORTNAME: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
-    API_BASE_URL: process.env.API_BASE_URL,
-    WS_BASE_URL: process.env.WS_BASE_URL,
-    ENCRYPT_KEY: process.env.ENCRYPT_KEY,
-    ENCRYPT_IV: process.env.ENCRYPT_IV,
-    REQUEST_SIGN_KEY: process.env.REQUEST_SIGN_KEY,
   },
 };
 
