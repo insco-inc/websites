@@ -2,8 +2,9 @@
 import { ImageResponse } from "next/og";
 import { domain } from "@/constants";
 
+const keywords: string[] = ["因斯科", "Insco"];
 export const runtime = "edge";
-export const alt = "因斯科,Insco";
+export const alt = keywords.join();
 export const contentType = "image/png";
 
 export default async function OG() {
@@ -28,8 +29,8 @@ export default async function OG() {
       >
         <img
           src={`${domain}/logo.png`}
-          alt="Insco Logo"
-          tw="w-20 h-20 mb-4 opacity-95"
+          alt={alt}
+          tw="w-20 h-20 mb-4 opacity-95 rounded-full"
         />
         <h1
           style={{
@@ -43,7 +44,7 @@ export default async function OG() {
             letterSpacing: "-0.02em",
           }}
         >
-          Insco
+          {keywords.at(1)}
         </h1>
       </div>
     ),
