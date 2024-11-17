@@ -5,8 +5,8 @@ import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
 import { FaBlog } from "react-icons/fa";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { RiCommunityLine } from "react-icons/ri";
+import Card from "@/components/home/card";
 import {
   Github,
   AppStore,
@@ -19,10 +19,6 @@ import {
 import { useTranslation } from "@/i18n/client";
 import { basePath } from "@/constants";
 import { allPosts } from "contentlayer/generated";
-
-const DynamicCard = dynamic(() => import("@/components/home/card"), {
-  ssr: false,
-});
 
 export default function Home({
   params: { lng },
@@ -54,7 +50,7 @@ export default function Home({
                 key={title}
                 className="w-full sm:w-[calc(calc(100%-1.25rem)/2)] lg:w-[calc(calc(100%-2.5rem)/3)]"
               >
-                <DynamicCard
+                <Card
                   title={title}
                   description={description}
                   demo={demo}
