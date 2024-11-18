@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
+import { AiOutlineTrademarkCircle } from "react-icons/ai";
 import { FaBlog } from "react-icons/fa";
 import Image from "next/image";
 import { RiCommunityLine } from "react-icons/ri";
@@ -139,10 +140,11 @@ export default function Home({
           />
         </div>
         <h1
-          className="font-display animate-fade-up bg-clip-text text-center text-4xl font-bold tracking-[-0.02em] text-black/80 opacity-0 drop-shadow-sm dark:text-white/80 md:text-7xl md:leading-[5rem]"
+          className="font-display animate-fade-up bg-clip-text text-center text-4xl font-bold tracking-[-0.02em] text-black/80 opacity-0 drop-shadow-sm dark:text-white/80 md:text-7xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>{th("title")}</Balancer>
+          <AiOutlineTrademarkCircle className="inline-block align-top text-[22px] text-[#ff7979]" />
         </h1>
         <p
           className="mt-6 animate-fade-up text-center text-[#ff7979] opacity-0 md:text-xl"

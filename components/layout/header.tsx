@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "muse-ui";
+import { AiOutlineTrademarkCircle } from "react-icons/ai";
 import { LuRss } from "react-icons/lu";
 import useScroll from "@/lib/hooks/use-scroll";
 import LngDropdown from "./lng-dropdown";
@@ -46,6 +47,7 @@ export default function Header(props: LngProps) {
             className="mr-2 rounded-sm"
           ></Image>
           <p>{t("title")}</p>
+          <AiOutlineTrademarkCircle className="mt-[3px] self-start text-[14px] text-[#ff7979]" />
         </Link>
         <div
           className="w-18 hidden items-center justify-between max-md:absolute max-md:right-5 max-md:top-16 max-md:bg-white max-md:dark:bg-gray-900 md:order-1 md:flex md:w-auto"
