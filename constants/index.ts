@@ -7,4 +7,4 @@ export const domain =
   process.env.NODE_ENV === "production"
     ? `https://www.insco.io${basePath}`
     : `http://localhost:3000${basePath}`;
-export const sitemapUrls = ["support"];
+export const sitemapUrls = ["apps", "support"];

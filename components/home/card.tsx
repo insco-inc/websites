@@ -1,5 +1,6 @@
 "use client";
 import { ReactNode } from "react";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
 
@@ -15,8 +16,9 @@ export default function Card({
   url: string;
 }) {
   return (
-    <div
-      onClick={() => window.open(url)}
+    <Link
+      href={url}
+      target="_blank"
       className="relative col-span-1 h-96 w-full cursor-pointer overflow-hidden rounded-xl border border-gray-200 hover:shadow-md dark:border-gray-700 dark:hover:shadow-gray-700"
     >
       <div className="flex h-60 items-center justify-center">{demo}</div>
@@ -51,6 +53,6 @@ export default function Card({
           </Balancer>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

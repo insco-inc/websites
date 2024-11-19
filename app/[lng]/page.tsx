@@ -45,19 +45,15 @@ export default function Home({
           <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
             {title}
           </div>
-          <div className="mt-6 flex w-full max-w-screen-xl flex-grow animate-fade-up flex-wrap gap-5">
+          <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {links.map(({ title, description, demo, url }) => (
-              <div
+              <Card
                 key={title}
-                className="w-full sm:w-[calc(calc(100%-1.25rem)/2)] lg:w-[calc(calc(100%-2.5rem)/3)]"
-              >
-                <Card
-                  title={title}
-                  description={description}
-                  demo={demo}
-                  url={url}
-                />
-              </div>
+                title={title}
+                description={description}
+                demo={demo}
+                url={url}
+              />
             ))}
           </div>
         </div>
@@ -181,7 +177,6 @@ export default function Home({
           <Link
             className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 dark:bg-black dark:text-white/80"
             href="support"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <RiCommunityLine className="h-6 w-6" />

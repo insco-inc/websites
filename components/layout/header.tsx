@@ -9,6 +9,7 @@ import {
 } from "muse-ui";
 import { AiOutlineTrademarkCircle } from "react-icons/ai";
 import { LuRss } from "react-icons/lu";
+import { IoApps } from "react-icons/io5";
 import useScroll from "@/lib/hooks/use-scroll";
 import LngDropdown from "./lng-dropdown";
 import ThemeDropdown from "./theme-dropdown";
@@ -60,8 +61,26 @@ export default function Header(props: LngProps) {
                   <Tooltip>
                     <TooltipTrigger>
                       <Link
+                        href="/apps"
+                        className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95 sm:h-9 sm:w-9"
+                      >
+                        <IoApps className="h-5 w-5" />
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{t("menus.apps")}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+            </li>
+            <li className="h-8 w-8 sm:h-9 sm:w-9">
+              <div className="relative inline-block text-left">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Link
                         href="/blog"
-                        target="_blank"
                         className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95 sm:h-9 sm:w-9"
                       >
                         <LuRss className="h-5 w-5" />
