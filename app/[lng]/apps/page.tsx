@@ -41,8 +41,8 @@ export default function Support({
 
   const apps = [
     {
-      title: "PicGuard",
-      description: "Your pictures, your signature.",
+      title: t("pg-app-name"),
+      description: t("pg-app-description"),
       demo: (
         <Image
           className="rounded-full shadow-lg shadow-black/[0.03]"
@@ -56,15 +56,15 @@ export default function Support({
       large: false,
     },
     {
-      title: "FaFa Runner",
-      description: "Enjoy smooth gameplay, stunning graphics, and endless fun.",
+      title: t("fr-app-name"),
+      description: t("fr-app-description"),
       demo: (
         <Image
           className="rounded-full shadow-lg shadow-black/[0.03]"
           src="https://www.fafarunner.com/logo.jpg"
           width={96}
           height={96}
-          alt="FaFA Runner,发发跑酷"
+          alt="FaFa Runner,发发跑酷"
         />
       ),
       url: "https://www.fafarunner.com",

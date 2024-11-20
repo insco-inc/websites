@@ -1,4 +1,8 @@
 {
   "apps": "应用",
-  "description": "利用我们构建的应用来提高您的效率。"
+  "description": "利用我们构建的应用来提高您的效率。",
+  "pg-app-name": "PicGuard",
+  "pg-app-description": "给图片添加水印，防止被恶意使用。",
+  "fr-app-name": "发发跑酷",
+  "fr-app-description": "享受流畅的游戏、令人惊叹的图形和无尽的乐趣。"
 }

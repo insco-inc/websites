@@ -1,4 +1,8 @@
 {
   "apps": "Apps",
-  "description": "Increase your efficiency with the apps we build."
+  "description": "Increase your efficiency with the apps we build.",
+  "pg-app-name": "PicGuard",
+  "pg-app-description": "Your pictures, your signature.",
+  "fr-app-name": "FaFa Runner",
+  "fr-app-description": "Enjoy smooth gameplay, stunning graphics, and endless fun."
 }
