@@ -52,16 +52,7 @@ export default function Footer(props: LngProps) {
         &nbsp;
         {process.env.VERCEL_GIT_COMMIT_SHA && (
           <>
-            <p className="flex items-center justify-center">
-              <a
-                href={`https://github.com/insco-inc/websites/commit/${process.env.VERCEL_GIT_COMMIT_SHA}`}
-                target="_blank"
-                className="hover:underline"
-                rel="noreferrer"
-              >
-                {process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
-              </a>
-            </p>
+            {process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
             &nbsp;
           </>
         )}
