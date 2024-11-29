@@ -10,6 +10,8 @@ import type { LngProps } from "@/types/i18next-lng";
 
 const startDate: number = 2024;
 
+const VERCEL_GIT_COMMIT_SHA = process.env.VERCEL_GIT_COMMIT_SHA;
+
 export default function Footer(props: LngProps) {
   const { t } = useTranslation(props.lng, "footer");
   const { t: th } = useTranslation(props.lng, "header");
@@ -40,7 +42,8 @@ export default function Footer(props: LngProps) {
         </Link>
       </p>
       <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-        © {`${startDate}${fullYear === startDate ? "" : `-${fullYear}`}`}&nbsp;
+        &copy;&nbsp;
+        {`${startDate}${fullYear === startDate ? "" : `-${fullYear}`}`}&nbsp;
         {th("title")}.&nbsp;{t("copyright")}&nbsp;
         <a href="/rss.xml" rel="noreferrer" target="_blank">
           <FaRss color="#ff7979" size="20px" />
@@ -50,11 +53,8 @@ export default function Footer(props: LngProps) {
           {t("sitemap")}
         </a>
         &nbsp;
-        {process.env.VERCEL_GIT_COMMIT_SHA && (
-          <>
-            {process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
-            &nbsp;
-          </>
+        {VERCEL_GIT_COMMIT_SHA && (
+          <>{VERCEL_GIT_COMMIT_SHA.substring(0, 8)}&nbsp;</>
         )}
         <Image
           src="https://visitor-badge.laobi.icu/badge?page_id=insco.io"
