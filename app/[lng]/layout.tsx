@@ -106,7 +106,7 @@ export default async function RootLayout({
         />
       </body>
       <CookieYes lng={params.lng} />
-      <GoogleAnalytics gaId={GA_TRACKING_ID} />
+      {GA_TRACKING_ID && <GoogleAnalytics gaId={GA_TRACKING_ID} />}
     </html>
   );
 }
