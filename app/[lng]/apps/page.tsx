@@ -70,6 +70,21 @@ export default function Support({
       url: "https://www.fafarunner.com",
       large: false,
     },
+    {
+      title: t("aty-app-name"),
+      description: t("aty-app-description"),
+      demo: (
+        <Image
+          className="rounded-full shadow-lg shadow-black/[0.03]"
+          src="https://www.artifylabs.org/logo.jpg"
+          width={96}
+          height={96}
+          alt="Artify"
+        />
+      ),
+      url: "https://www.artifylabs.org",
+      large: false,
+    },
   ];
 
   return (
