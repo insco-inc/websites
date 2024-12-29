@@ -11,6 +11,9 @@ importers:
       '@next/third-parties':
         specifier: ^14.2.22
         version: 14.2.22(next@14.2.22(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@primer/octicons-react':
+        specifier: ^19.14.0
+        version: 19.14.0(react@18.3.1)
       '@tsparticles/engine':
         specifier: ^3.7.1
         version: 3.7.1
@@ -989,6 +992,12 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@primer/octicons-react@19.14.0':
+    resolution: {integrity: sha512-EKeavGV7s2HYac3ybb+6vfyqHGMUeG+OlZAus5ORfEjzXlorDAIjZ59fszVJj9DI6ArfFK/Cvg8V4JRfeUHjcw==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: '>=16.3'
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -5898,6 +5907,10 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@primer/octicons-react@19.14.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
 
   '@protobufjs/aspromise@1.1.2': {}
 

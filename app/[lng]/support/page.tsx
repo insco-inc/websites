@@ -2,8 +2,8 @@
 import { useCallback } from "react";
 import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
-import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { CommentDiscussionIcon } from "@primer/octicons-react";
 import Card from "@/components/home/card";
 import { useTranslation } from "@/i18n/client";
 
@@ -54,7 +54,7 @@ export default function Support({
       title: t("discussions-title"),
       description: t("discussions-description"),
       demo: (
-        <FaGithub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+        <CommentDiscussionIcon className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
       url: "https://github.com/orgs/insco-inc/discussions",
       large: false,
