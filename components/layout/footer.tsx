@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaRss } from "react-icons/fa";
 import Cookies from "js-cookie";
@@ -56,12 +55,6 @@ export default function Footer(props: LngProps) {
         {VERCEL_GIT_COMMIT_SHA && (
           <>{VERCEL_GIT_COMMIT_SHA.substring(0, 8)}&nbsp;</>
         )}
-        <Image
-          src="https://visitor-badge.laobi.icu/badge?page_id=insco.io"
-          width={60}
-          height={20}
-          alt="visitor badge"
-        />
       </span>
       {["cn", "com_cn"].includes(cookie ?? "") ? (
         <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
