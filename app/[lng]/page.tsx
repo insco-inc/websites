@@ -85,7 +85,7 @@ export default function Home({
       demo: (
         <MicrosoftStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
-      url: "https://apps.microsoft.com/search/publisher?name=Insco+LLC",
+      url: "https://apps.microsoft.com/search/publisher?name=Insco+Ltd",
     },
     {
       title: "Amazon Appstore",
@@ -93,7 +93,7 @@ export default function Home({
       demo: (
         <AmazonAppStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
-      url: "https://www.amazon.com/s?i=mobile-apps&rh=p_4%3A%E9%9D%92%E5%B2%9B%E5%9B%A0%E6%96%AF%E7%A7%91%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&search-type=ss",
+      url: "https://www.amazon.com/s?i=mobile-apps&rh=p_4:青岛因斯科网络科技有限公司&search-type=ss",
     },
     {
       title: "Snap Store",
@@ -109,7 +109,7 @@ export default function Home({
       demo: (
         <Flathub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
-      url: "https://flathub.org/apps/collection/developer/Insco%20LLC/1",
+      url: "https://flathub.org/apps/collection/developer/Insco%20Ltd/1",
     },
   ];
 
