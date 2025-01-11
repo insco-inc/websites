@@ -76,7 +76,7 @@ export default function Support({
       demo: (
         <Image
           className="rounded-full shadow-lg shadow-black/[0.03]"
-          src="https://www.artifylabs.org/logo.jpg"
+          src="https://www.artifylabs.org/logo.png"
           width={96}
           height={96}
           alt="Artify"
