@@ -139,8 +139,8 @@ importers:
         specifier: ^4.17.14
         version: 4.17.14
       '@types/ms':
-        specifier: ^0.7.34
-        version: 0.7.34
+        specifier: ^2.1.0
+        version: 2.1.0
       '@types/node':
         specifier: ^18.19.70
         version: 18.19.70
@@ -2008,6 +2008,9 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
+  '@types/ms@2.1.0':
+    resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
+
   '@types/node@18.19.70':
     resolution: {integrity: sha512-RE+K0+KZoEpDUbGGctnGdkrLFwi1eYKTlIHNl2Um98mUkGsm1u2Ff6Ltd0e8DktTtC98uy7rSj+hO8t/QuLoVQ==}
 
@@ -2867,6 +2870,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -7067,6 +7071,8 @@ snapshots:
   '@types/mdx@2.0.13': {}
 
   '@types/ms@0.7.34': {}
+
+  '@types/ms@2.1.0': {}
 
   '@types/node@18.19.70':
     dependencies:
