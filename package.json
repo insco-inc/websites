@@ -62,7 +62,7 @@
     "@types/rss": "^0.0.32",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^14.2.23",
+    "eslint-config-next": "^15.1.6",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.2",
     "postcss": "^8.5.1",
