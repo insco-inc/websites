@@ -12,7 +12,7 @@
   "dependencies": {
     "@next/third-parties": "^14.2.23",
     "@primer/octicons-react": "^19.14.0",
-    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/engine": "^3.8.0",
     "@tsparticles/react": "^3.0.0",
     "accept-language": "^3.0.20",
     "classnames": "^2.5.1",
@@ -20,8 +20,8 @@
     "contentlayer2": "^0.5.3",
     "date-fns": "^4.1.0",
     "disqus-react": "^1.1.5",
-    "focus-trap-react": "^11.0.2",
-    "framer-motion": "^11.17.0",
+    "focus-trap-react": "^11.0.3",
+    "framer-motion": "^11.18.2",
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-resources-to-backend": "^1.2.1",
@@ -45,7 +45,7 @@
     "rss": "^1.2.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "tsparticles": "^3.7.1"
+    "tsparticles": "^3.8.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
@@ -55,8 +55,8 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/js-cookie": "^3.0.6",
     "@types/lodash": "^4.17.14",
-    "@types/ms": "^0.7.34",
-    "@types/node": "^18.19.70",
+    "@types/ms": "^2.1.0",
+    "@types/node": "^18.19.74",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/rss": "^0.0.32",
@@ -64,16 +64,16 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.23",
     "husky": "^9.1.7",
-    "lint-staged": "^15.3.0",
-    "postcss": "^8.4.49",
+    "lint-staged": "^15.4.2",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "prop-types": "^15.8.1",
-    "sort-package-json": "^2.12.0",
+    "sort-package-json": "^2.14.0",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3"
   },
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": "^18"
   }
