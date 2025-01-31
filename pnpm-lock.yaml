@@ -15,11 +15,11 @@ importers:
         specifier: ^19.14.0
         version: 19.14.0(react@18.3.1)
       '@tsparticles/engine':
-        specifier: ^3.8.0
-        version: 3.8.0
+        specifier: ^3.8.1
+        version: 3.8.1
       '@tsparticles/react':
         specifier: ^3.0.0
-        version: 3.0.0(@tsparticles/engine@3.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 3.0.0(@tsparticles/engine@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       accept-language:
         specifier: ^3.0.20
         version: 3.0.20
@@ -1794,6 +1794,9 @@ packages:
   '@tsparticles/engine@3.8.0':
     resolution: {integrity: sha512-mqdSG4gkLbOUck/Wqk8rR4duc6NCnmtJfSPkIvVOUpo/jk2kAGaxRVSU9n0sySxZRx+CGbpAFVVdjdtB1N+70A==}
 
+  '@tsparticles/engine@3.8.1':
+    resolution: {integrity: sha512-S8h10nuZfElY7oih//NUHnT5qf4v3/dnsU8CMs7dz5lBEGr3amrYrXk0V+YKPTIQwfdmJHUaSBoAqFiv4aEGIA==}
+
   '@tsparticles/interaction-external-attract@3.8.0':
     resolution: {integrity: sha512-zt79aCFELp/w2Ypo9w8hKv6x2YJZMu4VtSixNVIT7RJ13/vopdfHI5TjbnD6jCbYQDw35UdTWj2PwSx87KMjJQ==}
 
@@ -2863,6 +2866,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -6787,6 +6791,8 @@ snapshots:
 
   '@tsparticles/engine@3.8.0': {}
 
+  '@tsparticles/engine@3.8.1': {}
+
   '@tsparticles/interaction-external-attract@3.8.0':
     dependencies:
       '@tsparticles/engine': 3.8.0
@@ -6885,9 +6891,9 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.8.0
 
-  '@tsparticles/react@3.0.0(@tsparticles/engine@3.8.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tsparticles/react@3.0.0(@tsparticles/engine@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tsparticles/engine': 3.8.0
+      '@tsparticles/engine': 3.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
