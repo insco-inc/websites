@@ -85,7 +85,7 @@ export default function Home({
       demo: (
         <MicrosoftStore className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
-      url: "https://apps.microsoft.com/search/publisher?name=Insco+Ltd",
+      url: "https://apps.microsoft.com/search/publisher?name=Insco",
     },
     {
       title: "Amazon Appstore",
@@ -109,7 +109,7 @@ export default function Home({
       demo: (
         <Flathub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
       ),
-      url: "https://flathub.org/apps/collection/developer/Insco%20Ltd/1",
+      url: "https://flathub.org/apps/collection/developer/Insco/1",
     },
   ];
 
