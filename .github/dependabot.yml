@@ -1,4 +1,4 @@
-# To get started with Dependabot version updates, you'll need to specify which
+# To get started with Dependabot version updates, you"ll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    # Workflow files stored in the default location of `.github/workflows`. (You don"t need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
     directory: "/"
     schedule:
       interval: "daily"
@@ -17,3 +17,22 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: react
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: react-dom
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "@types/react-dom"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: next
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: eslint-config-next
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "@next/third-parties"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: tailwindcss
+        update-types: ["version-update:semver-minor"]
