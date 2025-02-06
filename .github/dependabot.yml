@@ -26,6 +26,8 @@ updates:
         patterns: [ "@commitlint/cli", "@commitlint/config-conventional" ]
       tsparticles-dependencies:
         patterns: [ "tsparticles", "@tsparticles/engine", "@tsparticles/react" ]
+      contentlayer2-dependencies:
+        patterns: [ "contentlayer2", "next-contentlayer2" ]
     ignore:
       - dependency-name: react
         versions: [ ">=19" ]
