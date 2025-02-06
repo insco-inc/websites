@@ -1,4 +1,4 @@
-# To get started with Dependabot version updates, you'll need to specify which
+# To get started with Dependabot version updates, you"ll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    # Workflow files stored in the default location of `.github/workflows`. (You don"t need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
     directory: "/"
     schedule:
       interval: "daily"
@@ -17,3 +17,31 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
+    groups:
+      react-dependencies:
+        patterns: [ "react", "react-dom", "@types/react", "@types/react-dom" ]
+      next-dependencies:
+        patterns: [ "next", "eslint-config-next", "@next/third-parties" ]
+      commitlint-dependencies:
+        patterns: [ "@commitlint/cli", "@commitlint/config-conventional" ]
+      tsparticles-dependencies:
+        patterns: [ "tsparticles", "@tsparticles/engine", "@tsparticles/react" ]
+    ignore:
+      - dependency-name: react
+        versions: [ ">=19" ]
+      - dependency-name: react-dom
+        versions: [ ">=19" ]
+      - dependency-name: "@types/react"
+        versions: [ ">=19" ]
+      - dependency-name: "@types/react-dom"
+        versions: [ ">=19" ]
+      - dependency-name: "@types/node"
+        versions: [ ">=19" ]
+      - dependency-name: next
+        versions: [ ">=15" ]
+      - dependency-name: eslint-config-next
+        versions: [ ">=15" ]
+      - dependency-name: "@next/third-parties"
+        versions: [ ">=15" ]
+      - dependency-name: tailwindcss
+        versions: [ ">=4" ]
