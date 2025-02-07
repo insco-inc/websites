@@ -12,6 +12,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { hostname: "insco.io" },
+      { hostname: "insco.cn" },
+      { hostname: "insco.com.cn" },
       { hostname: "lh3.googleusercontent.com" },
     ],
     unoptimized: true,
