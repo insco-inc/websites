@@ -1,0 +1,10 @@
+.contentlayer
+.github
+.husky
+.idea
+.git
+.next
+node_modules
+Dockerfile
+.dockerignore
+.env

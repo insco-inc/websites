@@ -1,0 +1,23 @@
+FROM nginx:1.26.2
+
+LABEL org.opencontainers.image.authors="kjxbyz <kjxbyz888@outlook.com>"
+LABEL org.opencontainers.image.source="https://github.com/insco-inc/sentinel"
+LABEL org.opencontainers.image.description="This image is used to forward or redirect traffic to individual sites, allowing content to be delivered efficiently and easily."
+LABEL org.opencontainers.image.licenses=MIT
+
+COPY ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/domains/ /etc/nginx/conf.d/
+
+WORKDIR /certs
+
+COPY ./certs/ ./
+
+RUN mkdir -p /logs/sentinel && touch $_/error.log
+RUN touch /logs/sentinel/access.log
+
+VOLUME ["/logs/sentinel"]
+
+EXPOSE 80
+EXPOSE 443
+
+CMD nginx -g "daemon off;"
