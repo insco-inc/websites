@@ -98,7 +98,7 @@ jobs:
       - name: deploy to ecs
         uses: appleboy/ssh-action@v1.2.0
         env:
-          REGISTRY_SERVER: ${{ secrets.REGISTRY_SERVER }}
+          INTERNAL_REGISTRY_SERVER: ${{ secrets.INTERNAL_REGISTRY_SERVER }}
           VERSION_SHORT: ${{ needs.get-version.outputs.version_short }}
           GIT_COMMIT_SHA: ${{ github.sha }}
         with:
@@ -106,7 +106,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          envs: REGISTRY_SERVER,WEB_CONTAINER_NAME,SENTINEL_CONTAINER_NAME,VERSION_SHORT,GIT_COMMIT_SHA
+          envs: INTERNAL_REGISTRY_SERVER,WEB_CONTAINER_NAME,SENTINEL_CONTAINER_NAME,VERSION_SHORT,GIT_COMMIT_SHA
           script: |
             if [ ! -d "/docker-compose" ]; then
               echo "🟩 Creating docker-compose directory"
@@ -124,7 +124,7 @@ jobs:
             cat <<EOL > /docker-compose/docker-compose-${VERSION_SHORT}.yml
             services:
               web:
-                image: ${REGISTRY_SERVER}/${WEB_CONTAINER_NAME}:${VERSION_SHORT}
+                image: ${INTERNAL_REGISTRY_SERVER}/${WEB_CONTAINER_NAME}:${VERSION_SHORT}
                 pull_policy: always
                 restart: always
                 environment:
@@ -132,7 +132,7 @@ jobs:
                   NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA: ${GIT_COMMIT_SHA}
 
               nginx:
-                image: ${REGISTRY_SERVER}/${SENTINEL_CONTAINER_NAME}:${VERSION_SHORT}
+                image: ${INTERNAL_REGISTRY_SERVER}/${SENTINEL_CONTAINER_NAME}:${VERSION_SHORT}
                 pull_policy: always
                 restart: always
                 ports:
