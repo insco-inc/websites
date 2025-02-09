@@ -1,5 +1,7 @@
 # websites
 
+[![Deploy](https://github.com/insco-inc/websites/actions/workflows/deploy.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/deploy.yml)
+
 ## Setup
 
 ```bash
