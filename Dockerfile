@@ -3,7 +3,7 @@ LABEL org.opencontainers.image.authors="kjxbyz <kjxbyz888@outlook.com>"
 LABEL org.opencontainers.image.source="https://github.com/insco-inc/websites"
 LABEL org.opencontainers.image.description="Websites."
 LABEL org.opencontainers.image.licenses=MIT
-RUN npm install -g pnpm@10.2.0
+RUN npm install -g pnpm@10.2.1
 WORKDIR /app
 COPY . .
 
