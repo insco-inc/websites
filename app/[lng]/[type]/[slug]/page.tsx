@@ -3,17 +3,16 @@ import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-// import dynamic from "next/dynamic";
-import { DiscussionEmbed } from "disqus-react";
+import dynamic from "next/dynamic";
 import PostDate from "@/components/post/post-date";
 import { Mdx } from "@/components/mdx/mdx";
 import PostNav from "@/components/post/post-nav";
 import { basePath, domain } from "@/constants";
 
-// const DiscussionEmbed = dynamic(
-//     () => import('disqus-react').then((mod) => mod.DiscussionEmbed),
-//     { ssr: false }
-// )
+const DiscussionEmbed = dynamic(
+  () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
+  { ssr: false },
+);
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
