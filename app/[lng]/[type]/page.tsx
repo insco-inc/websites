@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import PostItem from "@/components/post/post-item";
 import LatestPosts from "@/components/post/latest-posts";
 // import Topics from "@/components/post/topics";
-import { basePath } from "@/constants";
+import { basePath, domain } from "@/constants";
 import { useTranslation } from "@/i18n";
 import { allPosts } from "contentlayer/generated";
 import type { Metadata } from "next";
@@ -17,10 +17,11 @@ export async function generateMetadata({
   return {
     title: t("menus.blog"),
     description: `${t("menus.blog")} - ${tc("slogan")}`,
-    metadataBase: new URL("https://insco.io"),
+    metadataBase: new URL(domain),
     icons: {
       icon: `${basePath}/logo.png`,
     },
+    manifest: `${basePath}/manifest.json`,
   };
 }
 

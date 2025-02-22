@@ -1,5 +1,4 @@
-"use client";
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -9,37 +8,42 @@ import { DiscussionEmbed } from "disqus-react";
 import PostDate from "@/components/post/post-date";
 import { Mdx } from "@/components/mdx/mdx";
 import PostNav from "@/components/post/post-nav";
-import { domain } from "@/constants";
+import { basePath, domain } from "@/constants";
 
 // const DiscussionEmbed = dynamic(
 //     () => import('disqus-react').then((mod) => mod.DiscussionEmbed),
 //     { ssr: false }
 // )
 
-// export async function generateStaticParams() {
-//   return allPosts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// }
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string; type: string; lng: string };
-// }): Promise<Metadata | undefined> {
-//   const post = allPosts.find(
-//     (post) => post.slug === `${params.lng}/${params.type}/${params.slug}`,
-//   );
-//
-//   if (!post) return;
-//
-//   const { title, summary: description } = post;
-//
-//   return {
-//     title,
-//     description,
-//   };
-// }
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string; type: string; lng: string };
+}): Promise<Metadata | undefined> {
+  const post = allPosts.find(
+    (post) => post.slug === `${params.lng}/${params.type}/${params.slug}`,
+  );
+
+  if (!post) return;
+
+  const { title, summary: description } = post;
+
+  return {
+    title,
+    description,
+    metadataBase: new URL(domain),
+    icons: {
+      icon: `${basePath}/logo.png`,
+    },
+    manifest: `${basePath}/manifest.json`,
+  };
+}
 
 const NEXT_PUBLIC_DISQUS_SHORTNAME = process.env.NEXT_PUBLIC_DISQUS_SHORTNAME;
 

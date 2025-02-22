@@ -14,7 +14,7 @@ import CookieYes from "@/components/shared/cookie-yes";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { useTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
-import { basePath } from "@/constants";
+import { basePath, domain } from "@/constants";
 import { sfPro, inter } from "./fonts";
 import ThemeProvider from "./theme-provider";
 import Particles from "./particles";
@@ -53,10 +53,11 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: `${t("title")} - ${tc("slogan")}`,
-    metadataBase: new URL("https://insco.io"),
+    metadataBase: new URL(domain),
     icons: {
       icon: `${basePath}/logo.png`,
     },
+    manifest: `${basePath}/manifest.json`,
   };
 }
 
