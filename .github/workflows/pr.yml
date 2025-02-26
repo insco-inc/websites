@@ -1,0 +1,47 @@
+name: PR
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - '.github/FUNDING.yml'
+      - 'LICENSE'
+      - 'README.md'
+    branches:
+      - main
+
+
+# Declare default permissions as readonly.
+permissions: read-all
+
+jobs:
+  web:
+    name: Create web
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.2.1
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build web
+        run: pnpm build
+        env:
+          GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
+          GH_REPO: ${{ secrets.GH_REPO }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NEXT_PUBLIC_GIT_COMMIT_SHA: ${{ github.sha }}
+          NEXT_PUBLIC_GOOGLE_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ID }}
+          NEXT_PUBLIC_COOKIE_BANNER_ID: ${{ secrets.NEXT_PUBLIC_COOKIE_BANNER_ID }}
+          NEXT_PUBLIC_SHOW_PARTICLES: ${{ secrets.NEXT_PUBLIC_SHOW_PARTICLES }}
+          NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY: ${{ secrets.NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY }}
