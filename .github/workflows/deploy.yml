@@ -47,7 +47,7 @@ jobs:
 
       - name: Docker build & push
         run: |
-          docker build . --build-arg VERCEL_GIT_COMMIT_SHA=${{ github.sha }} -t ${{ secrets.REGISTRY_SERVER }}/${{ env.WEB_CONTAINER_NAME }}:${{ needs.get-version.outputs.version_short }}
+          docker build . --build-arg GIT_COMMIT_SHA=${{ github.sha }} -t ${{ secrets.REGISTRY_SERVER }}/${{ env.WEB_CONTAINER_NAME }}:${{ needs.get-version.outputs.version_short }}
           docker tag ${{ secrets.REGISTRY_SERVER }}/${{ env.WEB_CONTAINER_NAME }}:${{ needs.get-version.outputs.version_short }} ${{ secrets.REGISTRY_SERVER }}/${{ env.WEB_CONTAINER_NAME }}:latest
           docker push -a ${{ secrets.REGISTRY_SERVER }}/${{ env.WEB_CONTAINER_NAME }}
 
@@ -134,7 +134,7 @@ jobs:
                 restart: always
                 environment:
                   NODE_ENV: production
-                  NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA: ${GIT_COMMIT_SHA}
+                  NEXT_PUBLIC_GIT_COMMIT_SHA: ${GIT_COMMIT_SHA}
 
               nginx:
                 image: ${INTERNAL_REGISTRY_SERVER}/${SENTINEL_CONTAINER_NAME}:${VERSION_SHORT}

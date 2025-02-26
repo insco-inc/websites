@@ -14,7 +14,7 @@ import CookieYes from "@/components/shared/cookie-yes";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { useTranslation } from "@/i18n";
 import { languages } from "@/i18n/settings";
-import { basePath, domain } from "@/constants";
+import { domain } from "@/constants";
 import { sfPro, inter } from "./fonts";
 import ThemeProvider from "./theme-provider";
 import Particles from "./particles";
@@ -55,9 +55,9 @@ export async function generateMetadata({
     description: `${t("title")} - ${tc("slogan")}`,
     metadataBase: new URL(domain),
     icons: {
-      icon: `${basePath}/logo.png`,
+      icon: `${domain}/logo.png`,
     },
-    manifest: `${basePath}/manifest.json`,
+    manifest: `${domain}/manifest.json`,
   };
 }
 

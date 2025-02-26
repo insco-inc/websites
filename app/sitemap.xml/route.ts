@@ -1,5 +1,5 @@
 import { allPosts } from "contentlayer/generated";
-import { domain, basePath, sitemapUrls } from "@/constants";
+import { domain, sitemapUrls } from "@/constants";
 import { languages } from "@/i18n/settings";
 
 import { MetadataRoute } from "next";
@@ -7,7 +7,7 @@ import { MetadataRoute } from "next";
 export async function GET(request: Request) {
   const originHost = request.headers.get("custom-forwarded-host");
   console.log("originHost:", originHost);
-  const host = originHost ? `https://${originHost}${basePath}` : domain;
+  const host = originHost ? `https://${originHost}` : domain;
 
   let sitemaps = allPosts
     .sort((a, b) => {

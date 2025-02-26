@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import PostDate from "@/components/post/post-date";
 import { Mdx } from "@/components/mdx/mdx";
 import PostNav from "@/components/post/post-nav";
-import { basePath, domain } from "@/constants";
+import { domain } from "@/constants";
 
 const DiscussionEmbed = dynamic(
   () => import("disqus-react").then((mod) => mod.DiscussionEmbed),
@@ -38,9 +38,9 @@ export async function generateMetadata({
     description,
     metadataBase: new URL(domain),
     icons: {
-      icon: `${basePath}/logo.png`,
+      icon: `${domain}/logo.png`,
     },
-    manifest: `${basePath}/manifest.json`,
+    manifest: `${domain}/manifest.json`,
   };
 }
 

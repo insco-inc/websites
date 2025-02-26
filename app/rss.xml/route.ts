@@ -1,6 +1,6 @@
 import RSS from "rss";
 import { allPosts } from "contentlayer/generated";
-import { basePath, domain } from "@/constants";
+import { domain } from "@/constants";
 import { languages } from "@/i18n/settings";
 
 const rssPages = ["/blog"];
@@ -8,7 +8,7 @@ const rssPages = ["/blog"];
 export async function GET(request: Request) {
   const originHost = request.headers.get("custom-forwarded-host");
   console.log("originHost:", originHost);
-  const host = originHost ? `https://${originHost}${basePath}` : domain;
+  const host = originHost ? `https://${originHost}` : domain;
   const feed = new RSS({
     title: "Blog posts | RSS Feed",
     description: "Welcome to blog posts!",

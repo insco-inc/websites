@@ -18,7 +18,6 @@ import {
   Flathub,
 } from "@/components/shared/icons";
 import { useTranslation } from "@/i18n/client";
-import { basePath } from "@/constants";
 import { allPosts } from "contentlayer/generated";
 
 export default function Home({
@@ -130,7 +129,7 @@ export default function Home({
           <Image
             className="rounded-full"
             alt="logo"
-            src={`${basePath}/logo.png`}
+            src={"/logo.png"}
             width={160}
             height={160}
           />

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { basePath } from "@/constants";
 
 export default function PageHeader({
   title,
@@ -14,7 +13,7 @@ export default function PageHeader({
     <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center dark:border-gray-700 dark:bg-gray-900 sm:px-16">
       <Link href="/">
         <Image
-          src={`${basePath}/logo.png`}
+          src={"/logo.png"}
           alt="Insco logo"
           className="h-10 w-10 rounded-full"
           width={20}

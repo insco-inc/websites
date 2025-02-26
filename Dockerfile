@@ -12,8 +12,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 
 FROM base AS builder
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-ARG VERCEL_GIT_COMMIT_SHA
-ARG VERCEL_ENV
+ARG GIT_COMMIT_SHA
 ARG GOOGLE_ID
 ARG COOKIE_BANNER_ID
 ARG SHOW_PARTICLES
@@ -23,8 +22,7 @@ ARG DISQUS_SHORTNAME
 RUN echo -e "==============================\n\
 Build Environment Information\n\
 ==============================\n\
-Vercel Git Commit SHA: ${VERCEL_GIT_COMMIT_SHA:-Not Provided}\n\
-Vercel Environment: ${VERCEL_ENV:-Not Provided}\n\
+Vercel Git Commit SHA: ${GIT_COMMIT_SHA:-Not Provided}\n\
 Google ID: ${GOOGLE_ID:-Not Provided}\n\
 Cookie Banner ID: ${COOKIE_BANNER_ID:-Not Provided}\n\
 Show Particles: ${SHOW_PARTICLES:-Not Provided}\n\
@@ -32,8 +30,7 @@ Website Global Gray: ${WEBSITE_GLOBAL_GRAY:-Not Provided}\n\
 Disqus Shortname: ${DISQUS_SHORTNAME:-Not Provided}\n\
 =============================="
 
-ENV NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA=${VERCEL_GIT_COMMIT_SHA}
-ENV NEXT_PUBLIC_VERCEL_ENV=${VERCEL_ENV}
+ENV NEXT_PUBLIC_GIT_COMMIT_SHA=${GIT_COMMIT_SHA}
 ENV NEXT_PUBLIC_GOOGLE_ID=${GOOGLE_ID}
 ENV NEXT_PUBLIC_COOKIE_BANNER_ID=${COOKIE_BANNER_ID}
 ENV NEXT_PUBLIC_SHOW_PARTICLES=${SHOW_PARTICLES}

@@ -1,9 +1,9 @@
-import { domain, basePath } from "@/constants";
+import { domain } from "@/constants";
 
 export async function GET(request: Request) {
   const originHost = request.headers.get("custom-forwarded-host");
   console.log("originHost:", originHost);
-  const host = originHost ? `https://${originHost}${basePath}` : domain;
+  const host = originHost ? `https://${originHost}` : domain;
 
   const robotsContent = `User-Agent: *
 Allow: /

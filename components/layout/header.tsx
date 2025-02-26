@@ -14,7 +14,6 @@ import useScroll from "@/lib/hooks/use-scroll";
 import LngDropdown from "./lng-dropdown";
 import ThemeDropdown from "./theme-dropdown";
 import { useTranslation } from "@/i18n/client";
-import { basePath } from "@/constants";
 import type { LngProps } from "@/types/i18next-lng";
 
 export default function Header(props: LngProps) {
@@ -41,7 +40,7 @@ export default function Header(props: LngProps) {
           className="font-display flex items-center text-2xl"
         >
           <Image
-            src={`${basePath}/logo.png`}
+            src={"/logo.png"}
             alt="logo"
             width="30"
             height="30"
