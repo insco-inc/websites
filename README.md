@@ -1,7 +1,7 @@
 # websites
 
 [![Deploy](https://github.com/insco-inc/websites/actions/workflows/deploy.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/deploy.yml)
-[![PR](https://github.com/insco-inc/websites/actions/workflows/pr.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/pr.yml)
+[![Test](https://github.com/insco-inc/websites/actions/workflows/test.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/test.yml)
 
 ## Setup
 
