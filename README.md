@@ -1,5 +1,6 @@
 # websites
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f15c4b99-3e92-46b8-8c85-f7ab201afd7d/deploy-status)](https://app.netlify.com/sites/insco-websites/deploys)
 [![Deploy](https://github.com/insco-inc/websites/actions/workflows/deploy.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/deploy.yml)
 [![Test](https://github.com/insco-inc/websites/actions/workflows/test.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/test.yml)
 
