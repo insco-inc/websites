@@ -1,6 +1,6 @@
 # websites
 
-[![Create Release](https://github.com/insco-inc/websites/actions/workflows/create-release.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/create-release.yml)
+[![Deploy](https://github.com/insco-inc/websites/actions/workflows/deploy.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/deploy.yml)
 [![Test](https://github.com/insco-inc/websites/actions/workflows/test.yml/badge.svg)](https://github.com/insco-inc/websites/actions/workflows/test.yml)
 
 ## Setup

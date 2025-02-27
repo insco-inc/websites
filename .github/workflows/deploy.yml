@@ -1,18 +1,9 @@
 name: Deploy
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        type: string
-        description: "Which tag are you using? (ex: v1.0.0+0)"
-        required: true
-  workflow_call:
-    inputs:
-      version:
-        type: string
-        description: "Which tag are you using? (ex: v1.0.0+0)"
-        required: true
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   WEB_CONTAINER_NAME: insco/websites
@@ -37,7 +28,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "version_short=$VERSION_SHORT" >> $GITHUB_OUTPUT
         env:
-          VERSION: ${{ inputs.version }}
+          VERSION: ${{ github.ref_name }}
 
   build-web:
     name: Build (Web)
@@ -84,11 +75,16 @@ jobs:
           # insco.com.cn
           echo "$INSCO_COM_CERT_KEY" | base64 --decode > ./certs/insco.com.cn.key
           echo "$INSCO_COM_CERT_PEM" | base64 --decode > ./certs/insco.com.cn.pem
+          # insco.io
+          echo "$INSCO_IO_CERT_KEY" | base64 --decode > ./certs/insco.io.key
+          echo "$INSCO_IO_CERT_PEM" | base64 --decode > ./certs/insco.io.pem
         env:
           INSCO_CERT_KEY: ${{ secrets.INSCO_CERT_KEY }}
           INSCO_CERT_PEM: ${{ secrets.INSCO_CERT_PEM }}
           INSCO_COM_CERT_KEY: ${{ secrets.INSCO_COM_CERT_KEY }}
           INSCO_COM_CERT_PEM: ${{ secrets.INSCO_COM_CERT_PEM }}
+          INSCO_IO_CERT_KEY: ${{ secrets.INSCO_IO_CERT_KEY }}
+          INSCO_IO_CERT_PEM: ${{ secrets.INSCO_IO_CERT_PEM }}
 
       - name: Docker build & push
         run: |
@@ -156,6 +152,13 @@ jobs:
             EOL
 
             docker compose -f /docker-compose/docker-compose-${{ needs.get-version.outputs.version_short }}.yml up -d
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ needs.get-version.outputs.version }}
+          tag_name: ${{ needs.get-version.outputs.version }}
+          token: ${{ secrets.INSCO_RELEASE_TOKEN }}
 
       - name: Clean up
         if: ${{ always() }}
