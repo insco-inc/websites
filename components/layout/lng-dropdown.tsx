@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { RiTranslate } from "react-icons/ri";
 import {
@@ -14,20 +14,20 @@ import {
   Button,
 } from "muse-ui";
 import { useTranslation } from "@/i18n/client";
-import { languages } from "@/i18n/settings";
+import { languages, lngRegex } from "@/i18n/settings";
 import type { LngProps } from "@/types/i18next-lng";
 
 export default function LngDropdown(props: LngProps) {
   const { t } = useTranslation(props.lng, "header");
-  const pathName = usePathname();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [openPopover, setOpenPopover] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const redirectedPathName = (locale: string) => {
-    if (!pathName) return "/";
-    const segments = pathName.split("/");
-    segments[1] = locale;
-    return segments.join("/");
+  const switchLanguage = (lang: string) => {
+    let currentPath = pathname.replace(lngRegex, ""); // 去除当前语言前缀
+    currentPath = currentPath.startsWith("/") ? currentPath : `/${currentPath}`;
+    return `/${lang}${currentPath}${searchParams.size === 0 ? "" : "?" + new URLSearchParams(searchParams)}`;
   };
 
   return (
@@ -52,7 +52,7 @@ export default function LngDropdown(props: LngProps) {
                 >
                   <Link
                     key={locale}
-                    href={redirectedPathName(locale)}
+                    href={switchLanguage(locale)}
                     className="relative flex w-full items-center justify-start space-x-2 rounded-md py-2 text-left text-sm font-medium transition-all duration-75"
                   >
                     <p className="text-sm">{t(`languages.${locale}`)}</p>
@@ -78,7 +78,7 @@ export default function LngDropdown(props: LngProps) {
               return (
                 <Link
                   key={locale}
-                  href={redirectedPathName(locale)}
+                  href={switchLanguage(locale)}
                   className={`relative flex w-full items-center justify-start space-x-2 rounded-md px-2 py-3 text-left text-sm font-medium transition-all duration-75 ${locale === props.lng ? "pointer-events-none opacity-50" : "hover:bg-accent hover:text-accent-foreground"}`}
                 >
                   <p className="text-sm">{t(`languages.${locale}`)}</p>

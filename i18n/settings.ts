@@ -1,6 +1,7 @@
 export const fallbackLng = "en";
 export const languages = [fallbackLng, "zh"];
 export const defaultNS = "common";
+export const lngRegex = RegExp(`^(/?(${languages.join("|")}))/`, "ig");
 
 export function getOptions(
   lng = fallbackLng,
