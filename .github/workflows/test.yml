@@ -47,8 +47,8 @@ jobs:
           GH_REPO_OWNER: ${{ secrets.GH_REPO_OWNER }}
           GH_REPO: ${{ secrets.GH_REPO }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NEXT_PUBLIC_GIT_COMMIT_SHA: ${{ github.sha }}
-          NEXT_PUBLIC_GOOGLE_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ID }}
-          NEXT_PUBLIC_COOKIE_BANNER_ID: ${{ secrets.NEXT_PUBLIC_COOKIE_BANNER_ID }}
-          NEXT_PUBLIC_SHOW_PARTICLES: ${{ secrets.NEXT_PUBLIC_SHOW_PARTICLES }}
-          NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY: ${{ secrets.NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY }}
+          COMMIT_REF: ${{ github.sha }}
+          GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
+          COOKIE_BANNER_ID: ${{ secrets.COOKIE_BANNER_ID }}
+          SHOW_PARTICLES: ${{ secrets.SHOW_PARTICLES }}
+          WEBSITE_GLOBAL_GRAY: ${{ secrets.WEBSITE_GLOBAL_GRAY }}

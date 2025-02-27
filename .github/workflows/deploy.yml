@@ -129,7 +129,7 @@ jobs:
                 restart: always
                 environment:
                   NODE_ENV: production
-                  NEXT_PUBLIC_GIT_COMMIT_SHA: ${GIT_COMMIT_SHA}
+                  COMMIT_REF: ${GIT_COMMIT_SHA}
 
               nginx:
                 image: ${INTERNAL_REGISTRY_SERVER}/${SENTINEL_CONTAINER_NAME}:${VERSION_SHORT}

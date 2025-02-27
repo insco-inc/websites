@@ -1,10 +1,10 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
-    NEXT_PUBLIC_GIT_COMMIT_SHA: string;
-    NEXT_PUBLIC_GOOGLE_ID: string;
-    NEXT_PUBLIC_COOKIE_BANNER_ID: string;
-    NEXT_PUBLIC_SHOW_PARTICLES: string;
-    NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY: string;
-    NEXT_PUBLIC_DISQUS_SHORTNAME: string;
+    GIT_COMMIT_SHA: string;
+    GOOGLE_ID: string;
+    COOKIE_BANNER_ID: string;
+    SHOW_PARTICLES: string;
+    WEBSITE_GLOBAL_GRAY: string;
+    DISQUS_SHORTNAME: string;
   }
 }
